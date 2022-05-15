@@ -28,7 +28,7 @@ func Regex(args *TemplateArgs) {
 		fmt.Println("Please enter the type [query|command]....")
 		return
 	}
-	
+
 	(&TemplateRegx{
 		Args: args,
 		Cfg:  &cfg,
@@ -71,7 +71,7 @@ func configure() {
 	} else {
 		cfg.ApplicationPath = txt
 	}
-
+	cfg.Namespace = cfg.Namespace + "." + cfg.ApplicationPath
 	configPath := getConfigurePath()
 
 	if _, err := os.Stat(configPath); err == nil {
